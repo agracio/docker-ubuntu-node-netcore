@@ -15,12 +15,11 @@ VOLUME /devvol
 RUN apt-get update
 
 # install dependencies
-RUN apt-get install -y lsb-release apt-transport-https build-essential libssl-dev python
+RUN apt-get install -y lsb-release apt-transport-https build-essential libssl-dev python git
 
 # install nvm
 RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
 RUN export NVM_DIR="$HOME/.nvm"
-RUN [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  
 
 # install node
 RUN nvm install 7.8.0
