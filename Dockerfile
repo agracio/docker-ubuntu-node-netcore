@@ -19,13 +19,13 @@ RUN apt-get install -y lsb-release apt-transport-https build-essential libssl-de
 
 # install nvm and node
 
-ENV NVM_DIR /usr/local/nvm
 ENV NODE_VERSION 7.8.0
+ENV NVM_DIR /home/node/.nvm
 
-RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash \
-    && source $NVM_DIR/nvm.sh \
-    && nvm install $NODE_VERSION \
-    && nvm alias default $NODE_VERSION
+RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash 
+
+#install the specified node version and set it as the default one, install the global npm packages
+RUN . ~/.nvm/nvm.sh && nvm install $NODE_VERSION && nvm alias default $NODE_VERSION
 
 # install net core
 RUN sh -c 'echo "deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/dotnet-release/ xenial main" > /etc/apt/sources.list.d/dotnetdev.list'
