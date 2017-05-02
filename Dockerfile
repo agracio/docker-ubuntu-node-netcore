@@ -17,12 +17,15 @@ RUN apt-get update
 # install dependencies
 RUN apt-get install -y lsb-release apt-transport-https build-essential libssl-dev python git
 
-# install nvm
-RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
-RUN export NVM_DIR="$HOME/.nvm"
+# install nvm and node
 
-# install node
-RUN nvm install 7.8.0
+ENV NVM_DIR /usr/local/nvm
+ENV NODE_VERSION 7.8.0
+
+RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash \
+    && source $NVM_DIR/nvm.sh \
+    && nvm install $NODE_VERSION \
+    && nvm alias default $NODE_VERSION
 
 # install net core
 RUN sh -c 'echo "deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/dotnet-release/ xenial main" > /etc/apt/sources.list.d/dotnetdev.list'
