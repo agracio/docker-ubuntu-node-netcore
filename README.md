@@ -1,2 +1,2 @@
-# ubuntu:latest with curl, sudo NodeJs and .Net Core
+# ubuntu:latest with curl, sudo, NodeJs and .Net Core
 
