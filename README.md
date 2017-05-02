@@ -1,1 +1,1 @@
-# docker-ubuntu-netcore
+# ubuntu:latest with curl, sudo NodeJs and .Net Core
