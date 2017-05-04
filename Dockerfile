@@ -20,7 +20,7 @@ RUN apt-get install -y lsb-release apt-transport-https build-essential libssl-de
 # install node
 
 RUN curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
-RUN  apt-get install -y nodejs
+RUN apt-get install -y nodejs
 
 # install net core
 RUN sh -c 'echo "deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/dotnet-release/ xenial main" > /etc/apt/sources.list.d/dotnetdev.list'
