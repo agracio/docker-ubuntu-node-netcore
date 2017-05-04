@@ -9,8 +9,8 @@ RUN apt-get install curl -y
 # install sudo
 RUN apt-get install sudo -y
 
-RUN mkdir /devvol
-VOLUME /devvol
+RUN mkdir /dev
+VOLUME /dev
 
 RUN apt-get update
 
