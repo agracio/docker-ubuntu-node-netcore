@@ -3,11 +3,8 @@ FROM ubuntu:latest
 # update apt-get
 RUN apt-get update -y && apt-get -y upgrade
 
-# install curl
-RUN apt-get install curl -y
-
-# install sudo
-RUN apt-get install sudo -y
+# install curl, sudo, wget
+RUN apt-get install curl sudo wget -y
 
 RUN mkdir /devvol
 VOLUME /devvol
