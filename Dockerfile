@@ -12,7 +12,7 @@ VOLUME /devvol
 RUN apt-get update
 
 # install dependencies
-RUN apt-get install -y apt-transport-https build-essential libgconf-2-4 python git
+RUN apt-get install -y apt-transport-https build-essential libgconf-2-4 python git libglib2.0-dev
 
 # install node
 
