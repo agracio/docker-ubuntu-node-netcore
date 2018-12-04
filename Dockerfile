@@ -2,7 +2,7 @@ FROM ubuntu:bionic
 
 # update apt-get
 RUN apt-get -y update > /dev/null
-RUN apt-get -y update > /dev/null
+RUN apt-get -y upgrade > /dev/null
 
 # install curl, sudo, wget
 RUN apt-get install -y curl sudo wget > /dev/null
