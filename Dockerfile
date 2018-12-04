@@ -1,10 +1,10 @@
 FROM ubuntu:bionic
 
 # update apt-get
-RUN apt-get update -y && apt-get -y upgrade
+RUN apt-get update -qq -y && apt-get -qq -y upgrade
 
 # install curl, sudo, wget
-RUN apt-get install curl sudo wget -y
+RUN apt-get install curl sudo wget -qq -y
 
 RUN mkdir /devvol
 VOLUME /devvol
@@ -12,7 +12,7 @@ VOLUME /devvol
 RUN apt-get update
 
 # install dependencies
-RUN apt-get install -y apt-transport-https build-essential libgconf-2-4 python git libglib2.0-dev
+RUN apt-get install -qq -y apt-transport-https build-essential libgconf-2-4 python git libglib2.0-dev
 
 # install node
 
@@ -28,7 +28,7 @@ RUN sudo mv prod.list /etc/apt/sources.list.d/microsoft-prod.list
 RUN sudo chown root:root /etc/apt/trusted.gpg.d/microsoft.asc.gpg
 RUN sudo chown root:root /etc/apt/sources.list.d/microsoft-prod.list
 
-RUN apt-get update
-RUN apt-get install -y dotnet-sdk-2.1
+RUN apt-get -qq update
+RUN apt-get -qq install -y dotnet-sdk-2.1
 
 RUN npm i -g node-gyp
