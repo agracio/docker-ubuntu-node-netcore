@@ -29,5 +29,3 @@ RUN wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-p
 RUN sudo dpkg -i packages-microsoft-prod.deb
 RUN sudo apt-get update
 RUN sudo apt-get install -y dotnet-sdk-5.0
-
-RUN npm i -g node-gyp
