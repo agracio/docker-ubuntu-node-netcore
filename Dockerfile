@@ -20,7 +20,7 @@ RUN apt-get install -y apt-transport-https build-essential libgconf-2-4 python g
 
 # install node
 
-RUN curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+RUN curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 RUN sudo apt-get install -y nodejs
 
 # install net core
